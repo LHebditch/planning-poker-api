@@ -1,0 +1,7 @@
+{"action": "joinsession","content": { \"sessionId\": \"abc123\", \"userId\": \"1\", \"displayName\": \"One\" }}
+
+{"action": "joinsession","content": { \"sessionId\": \"abc123\", \"userId\": \"2\", \"displayName\": \"Two\" }}
+
+{"action": "joinsession", "content": { \"sessionId\": \"abc123\", \"userId\": \"3\", \"displayName\": \"Three\" }}
+
+{"action": "joinsession", "content": { \"sessionId\": \"abc123\", \"userId\": \"4\", \"displayName\": \"Four\" }}
