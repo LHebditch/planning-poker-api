@@ -1,0 +1,39 @@
+name: PR Checks
+on:
+  pull_request:
+    branch:
+      - "main"
+
+env:
+  AWS_REGION: eu-west-1
+
+jobs:
+  synth:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup node
+        uses: actions/setup-node@v4
+
+      - name: Install
+        working-directory: cdk
+        run: npm i
+
+      - name: Configure aws credentials
+        uses: aws-actions/configure-aws-credentials@v1.7.0
+        with:
+          role-to-assume: arn:aws:iam::964567279417:role/GithubActionsAssumeRole
+          aws-region: ${{ env.AWS_REGION }}
+
+      - name: test role
+        run: aws sts get-caller-identity
+
+      - name: synth
+        working-directory: cdk
+        env:
+          AWS_ENVIRONMENT: TESTING
+          AWS_ACCOUNT: 964567279417
+
+        run: cdk synth --no-bundling
