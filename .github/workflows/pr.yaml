@@ -22,7 +22,7 @@ jobs:
         run: npm i
 
       - name: Configure aws credentials
-        uses: aws-actions/configure-aws-credentials@v1.7.0
+        uses: aws-actions/configure-aws-credentials@v4
         with:
           role-to-assume: arn:aws:iam::964567279417:role/GithubActionsAssumeRole
           aws-region: ${{ env.AWS_REGION }}
