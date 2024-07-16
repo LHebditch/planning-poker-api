@@ -19,7 +19,10 @@ jobs:
       - name: Setup node
         uses: actions/setup-node@v4
 
-      - name: Install
+      - name: Install App Deps
+        run: npm i
+
+      - name: Install CDK deps
         working-directory: cdk
         run: npm i
 
