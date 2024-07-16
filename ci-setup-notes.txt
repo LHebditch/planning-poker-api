@@ -1,0 +1,4 @@
+referenced this for github aws access
+https://aws.amazon.com/blogs/security/use-iam-roles-to-connect-github-actions-to-actions-in-aws/
+
+Used github  username as Organisation when setting up role due to using personal account
